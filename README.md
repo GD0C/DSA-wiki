@@ -5,3 +5,8 @@
 <h1 align="center">DSA-Wiki</h1>
 
 <p align="center"><strong>Want to learn your Data Structures & Algorithms? Let's get practical.</strong></p>
+
+<details>
+  <summary>Trees <kdb>15</kdb></summary>
+  <a href="./core/data-structure/tree/README.md">README</a>
+</details>
