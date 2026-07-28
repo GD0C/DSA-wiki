@@ -11,6 +11,16 @@
 }
 
 
+#let exampleGraph(text, values) = {
+  values.join()
+
+  box(width: 100%, height: 100%, stroke: 1pt, inset: 24pt, outset: 24pt, radius: 8pt)[
+    #text
+    #line(length: 100%)
+    #bst(values).diagram
+  ]
+}
+
 
 #box(width: 100%, height: 100%, stroke: 1pt, inset: 24pt, outset: 24pt, radius: 8pt)[
 
@@ -30,7 +40,7 @@
 
     2) *Parent* - To easily explain this, #emphBold("Root") = starting $--> forall n, n = "node"$ that come from the root, are know as *#emph("children")* and root would be the #emphBold("Parent"). 
 
-    #emphBold("B") = {#emphBold("D, E")} where D, E are children and B is the Parent
+    #emphBold("B") = { #emphBold("D, E") } where D, E are children and B is the Parent $and$ #emphBold("A") = { #emphBold("B, C") } is the Parent.
 
     3) *Child* - Again, let's make it easy - above I basically explained it... but if you don't understand... the #emphBold("child") in the case about would be the nodes descending from the #emphBold("root"). (see above case) 
 
@@ -62,7 +72,7 @@
 ]
 
 
-#box(width: 100%, height: 60%, stroke: 1pt, inset: 24pt, outset: 24pt, radius: 8pt)[
+#box(width: 100%, height: 50%, stroke: 1pt, inset: 24pt, outset: 24pt, radius: 8pt)[
   #figure(image("../images/tree-structures.png"), caption: "Tree Structures")
 
   #line(length: 100%)
@@ -80,8 +90,68 @@
 
       5) #emphBold("Balanced") - A tree that is said to be #emphBold("Balanced") 
       ]
+]
 
-  #align(center)[
-    #choose
+
+#v(2em)
+
+
+#let questions = [
+#align(center)[
+    Is this Complete? 
+
+    Is this Full?
+
+    Is this Perfect? 
+
+    Is this Balanced?
+
+    Is this Degenerate?
   ]
 ]
+
+
+= Examples
+#v(1em)
+
+
+
+
+// create functoion for this
+#let exampleValues = (
+  (1, 2, 4, 6, 55, 68),
+  (85, 69, 22, 105, 120, 103, 80),
+  (55, 21, 17, 19, 37, 69)
+)
+#let firstValues = exampleValues.at(0)
+#let secondValues = exampleValues.at(1)
+#let thirdValues = exampleValues.at(2)
+
+#grid(columns: 3,
+rect[
+  #box(inset: 12pt, fill: rgb("#f0f0f0"), radius: 8pt, stroke: black)[
+        #text("Example 1: ")
+        #bst(..firstValues).diagram
+  ]
+
+  #questions
+  
+], 
+rect[
+  #box(inset: 12pt, fill: rgb("#f0f0f0"), radius: 8pt, stroke: black)[
+        #text("Example 2: ")
+        #bst(..secondValues).diagram
+  ]
+
+  #questions
+],
+rect[
+  #box(inset: 12pt, fill: rgb("#f0f0f0"), radius: 8pt, stroke: black)[
+        #text("Example 3: ")
+        #bst(..thirdValues).diagram
+  ]
+
+  #questions
+],
+)
+
