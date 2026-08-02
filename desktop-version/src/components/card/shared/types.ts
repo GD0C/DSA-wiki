@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
+/**
+  * Author: { @Override } - 20260802 : @1340
+**/
 
-type CollectionType = "title" | "style" | string;
-
-export styleCollection = <T extends CollectionType>(type: T) => {
-  const data = {
-
-  }
-}
+export type CardTypes = "standard" | "accordion" | "accordion_row" | "image";
+export type CardType = (typeof CardTypes)[number];
+export type GridSize = 1 | 2 | 3 | 4;
 
 export type SharedType = {
-  type?: CollectionType;
+  type?: CardType;
   children?: ReactNode;
+  size?: GridSize;
 };
 
 
