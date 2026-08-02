@@ -13,14 +13,14 @@ interface AccordionCardProps {
 export const AccordionCard: FC<AccordionCardProps> = ({ data }) => {
   return (
     <>
-      <BaseCard>
-        {data.map((item, index) => (
-          <details key={index}>
-            <summary>{item.title}</summary>
+      {data.map((item, index) => (
+        <BaseCard>
+          <details key={index} className="">
+            <summary className="hover:cursor-pointer">{item.title}</summary>
             {item.children}
           </details>
-        ))}
-      </BaseCard>
+        </BaseCard>
+      ))}
     </>
   );
 }
