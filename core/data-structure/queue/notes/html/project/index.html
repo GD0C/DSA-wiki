@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Look I'm so cool no ai!!! -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Title</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      /* Override Tailwind's default sans stack with the one from styles.css. */
+      @theme {
+        --font-sans: Arial, Helvetica, sans-serif;
+      }
+
+      /* No Tailwind utility for these. Plain CSS is the answer. */
+      html {
+        interpolate-size: allow-keywords;
+      }
+
+      details::details-content {
+        opacity: 0;
+        block-size: 0;
+        overflow: hidden;
+        transition:
+          block-size 0.4s ease,
+          opacity 0.4s ease,
+          content-visibility 0.4s ease allow-discrete;
+      }
+
+      details[open]::details-content {
+        opacity: 1;
+        block-size: 400px;
+        overflow: auto;
+      }
+    </style>
+</head>
+<body class="bg-neutral-100 font-sans">
+    <div class="flex flex-col p-4 gap-4">
+      <div class="flex flex-col gap-2 align-center items-center justify-center">
+        <img src="./images/archivists-neu.png" alt="Logo" class="w-[120px] h-[120px] rounded-full">
+        <h1 class="text-3xl font-bold">Archivists</h1>
+        <span class="">The Queue Project</span>
+      </div>
+
+      <div class="flex p-6">
+        <h1 class="">Personas List</h1>
+      </div>
+
+
+      <div class="p-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 bg-[#ddd] rounded-md">
+        <details class="rounded-lg bg-[#fff] p-2 rounded-md">
+          <summary class="flex cursor-pointer text-[24px] hover:bg-gray-100 w-full p-4">Persona 1: Sam</summary>
+          <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+
+          <div class="m-2 flex flex-col gap-2">
+              <div class="flex flex-col gap-4 justify-center">
+                <h3 class="font-bold">Sam the "Book-worm"</h3>
+                <img src="./images/sam.png" alt="Sam the book-worm" class="w-full h-full">
+              </div>
+
+            <p class="p-2 bg-gray-100 rounded-md">
+               As a book-lover, I want to know what books my close friends circle like and dislikes because I am curious and share similar interests. (add)
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+               As a fan of books, I want to get recommendations for TV shows based on books, so I can get my friends who don’t read to enjoy the same series. (add) 
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+               As a bookworm, I want to keep track of all the books I've read and get recommendations for similar books based on my reading history and other users'. 
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              As a college student, I want to be able to share my profile and recommendations, so that I can make new friends. 
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              As someone who is always busy I don’t have a lot of time to go down recommendation rabbit holes, I want a platform that efficiently summarizes my likes so that I am able to find the next thing that I love without taking all my time. 
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              As an “occasional” reader, I want to read more, but maybe I just haven’t found an easy experience for finding new books. Recommendations from friends sometimes might not be the best, and my co-workers don’t really know my taste - which has led me to say “I like to read” but really my books sit collecting dust.  
+            </p>
+
+          </div>
+        </details>
+
+        <details class="rounded-lg bg-[#fff] p-2">
+          <summary class="flex cursor-pointer text-[24px] hover:bg-gray-100 w-full p-4">Persona 2: Morgan</summary>
+          <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+          <div class="m-2 flex flex-col gap-2">
+            <div class="flex flex-col gap-4 justify-center">
+              <h3 class="font-bold">System Admin</h3>
+              <img src="./images/morgan.png" alt="System Admin" class="w-full h-full">
+              
+            </div>
+
+            <p class="p-2 bg-gray-100 rounded-md">
+              foo
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              bar
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              bam
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              bum
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              bang
+            </p>
+              <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <p class="p-2 bg-gray-100 rounded-md">
+              bing
+            </p>
+
+          </div>
+        </details>
+
+        <details class="rounded-lg bg-[#fff] p-2">
+            <summary class="flex cursor-pointer text-[24px] hover:bg-gray-100 w-full p-4">Persona 3: Andy</summary>
+            <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <div class="m-2 flex flex-col gap-2">
+            <div class="flex flex-col gap-4 justify-center">
+                <h3 class="font-bold">Andy the Analyst</h3>
+                <img src="./images/andy.png" alt="System Admin" class="w-full h-full">
+              </div>
+
+                <p class="p-2 bg-gray-100 rounded-md">
+                  foo
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bar
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bam
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bum
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bang
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bing
+                </p>
+
+
+            </div>
+          </details>
+
+        <details class="rounded-lg bg-[#fff] p-2">
+            <summary class="flex cursor-pointer text-[24px] hover:bg-gray-100 w-full p-4">Persona 4: Taylor</summary>
+            <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+            <div class="m-2 flex flex-col gap-2">
+            <div class="flex flex-col gap-4 justify-center">
+                <h3 class="font-bold">Software Developer</h3>
+                <img src="./images/taylor.png" alt="Software Developer" class="w-full h-full">
+              </div>
+              <p class="p-2 bg-gray-100 rounded-md">
+                  foo
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bar
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bam
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bum
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bang
+                </p>
+                  <div class="m-1 bg-black w-100% h-0.5 rounded-full"></div>
+                <p class="p-2 bg-gray-100 rounded-md">
+                  bing
+                </p>
+
+
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-200 w-full rounded-md p-4 font-mono">More coming soon!</div>
+      </div>
+    </div>
+</body>
+</html>
