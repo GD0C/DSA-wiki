@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { BaseCard } from '../base/';
-import { GridSize, SharedType } from '../shared/types';
+import { CardTypes, GridSize, SharedType } from '../shared/types';
 
 type AccordionProps = {
   title: string;
@@ -8,14 +8,15 @@ type AccordionProps = {
 
 interface AccordionCardProps {
   data: AccordionProps[];
+  type?: CardTypes;
 }
 
-export const AccordionCard: FC<AccordionCardProps> = ({ data }) => {
+export const AccordionCard: FC<AccordionCardProps> = ({ data, type }) => {
   const size_logic = Math.min(data.length, 4) as GridSize;
 
   return (
     <>
-      <BaseCard type="accordion_row" size={size_logic}>
+      <BaseCard type={type} size={size_logic}>
         {data.map((item, index) => (
           <details key={index} className="">
             <summary className="hover:cursor-pointer">{item.title}</summary>

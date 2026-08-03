@@ -1,21 +1,29 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
-import { AccordionCard, BaseCard } from "./components";
-import { useTheme } from "./theme";
-import type { Theme } from "./theme";
+import { ArrayDiagram, AccordionCard, BaseCard } from "./components";
+import { useTheme, type Theme } from "./theme";
 import "./App.css";
 
-const LOREM = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-officia deserunt mollit anim id est laborum.`;
+
+const titles: string[] = [
+  "Intro",
+  "Getting Started",
+  "Installation",
+  "setup",
+]
+
+const values: int[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const details: React.ReactNode[] = [
+  (<button className="hover:cursor-pointer">hello</button>),
+  (<ArrayDiagram size={10} values={values} />),
+  "",
+  "",
+]
 
 const accordionData = Array.from({ length: 4 }, (_, i) => ({
-  title: `Accordion ${i + 1}`,
-  children: <p>{LOREM}</p>,
+  title: titles[i],
+  children: <div className="p-5">{details[i]}</div>,
 }));
 
 function App() {
@@ -50,20 +58,6 @@ function App() {
           <option value="system">System</option>
         </select>
       </div>
-
-
-      <div className="row">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
       <form
         className="row"

@@ -16,7 +16,7 @@ const COLS: Record<GridSize, string> = {
 } as const;;
 
 const STYLE: Record<CardType, (size: GridSize) => string> = {
-  standard: () => `${SURFACE} w-full rounded-md`,
+  standard: () => `${SURFACE} w-full rounded-md gap-8`,
   accordion: () => `${SURFACE} flex flex-col gap-8`,
   accordion_row: (size) => `${SURFACE} grid gap-8 ${COLS[size]}`,
   image: () => `${SURFACE} flex flex-col gap-8`,
