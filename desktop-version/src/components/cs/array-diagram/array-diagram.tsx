@@ -18,7 +18,9 @@ type ArrayDiagramProps<T> =
     defaultSelected?: number;
   });
 
-export function ArrayDiagram<T = number>(props: ArrayDiagramProps<T>) {
+
+
+export const ArrayDiagram = <T = number>(props: ArrayDiagramProps<T>) => {
   const { values, size, showIndices = true, highlight } = props;
   const length = values?.length ?? size ?? 0;
   const [selected, setSelected] = useState<number | null>(
