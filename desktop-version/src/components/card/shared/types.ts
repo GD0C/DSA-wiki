@@ -10,7 +10,12 @@ export type CardTypes =
   | "accordion_array"
   | "image";
 
-export type CardType = (typeof CardTypes)[number];
+
+export type BaseType = React.ComponentPropsWithoutRef<"div"> & {
+  variant?: CardTypes;
+};
+
+export type CardType = CardTypes;
 export type GridSize = 1 | 2 | 3 | 4;
 
 export type SharedType = {

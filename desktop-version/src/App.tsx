@@ -7,17 +7,22 @@ import "./App.css";
 
 const titles: string[] = [
   "Intro",
-  "Getting Started",
-  "Installation",
+  "Array Diagram Example (Basic)",
+  "Array Diagram Example (Advanced)",
   "setup",
 ]
 
-const values: int[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const values: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+const renderDetail = (value: number | undefined, idx: number) => (
+  <div className="text-red-500">arr[{idx}] = {String(value)}</div>
+);
 
 const details: React.ReactNode[] = [
   (<button className="hover:cursor-pointer">hello</button>),
-  (<ArrayDiagram size={10} values={values} />),
-  "",
+  (<ArrayDiagram values={values} />),
+  (<ArrayDiagram values={values} type="advanced" renderDetail={renderDetail} />),
   "",
 ]
 

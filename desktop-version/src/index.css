@@ -6,14 +6,17 @@
 :root {
   --brand: rgba(255, 255, 255, 0.5);
   --border: rgba(0, 0, 0, 0.5);
+  --button-border: rgba(0, 0, 0, 0.5);
 }
 
 .dark {
   --brand: rgba(0, 0, 0, 0.5);
   --border: rgba(255, 255, 255, 0.5);
+  --button-border: rgba(255, 255, 255, 0.5);
 }
 
 @theme inline {
   --color-brand: var(--brand);
   --color-border: var(--border);
+  --color-button-border: var(--button-border);
 }

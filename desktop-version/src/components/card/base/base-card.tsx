@@ -5,7 +5,6 @@ import { CardType, GridSize, SharedType } from '../shared/types';
   * Author: { @Override } - 20260802 : @1656
 **/
 
-
 const SURFACE = 'p-5 bg-brand rounded-lg';
 
 const COLS: Record<GridSize, string> = {
@@ -19,6 +18,7 @@ const STYLE: Record<CardType, (size: GridSize) => string> = {
   standard: () => `${SURFACE} w-full rounded-md gap-8`,
   accordion: () => `${SURFACE} flex flex-col gap-8`,
   accordion_row: (size) => `${SURFACE} grid gap-8 ${COLS[size]}`,
+  accordion_array: () => `${SURFACE} flex flex-col gap-4`,
   image: () => `${SURFACE} flex flex-col gap-8`,
 };
 
