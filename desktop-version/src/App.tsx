@@ -14,6 +14,7 @@ const titles: string[] = [
 
 const values: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const llValues: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(llValues);
 
 
 const renderDetail = (value: number | undefined, idx: number) => (
@@ -24,7 +25,7 @@ const details: React.ReactNode[] = [
   (<button className="hover:cursor-pointer">hello</button>),
   (<ArrayDiagram values={values} />),
   (<ArrayDiagram values={values} type="advanced" renderDetail={renderDetail} />),
-  (<LLDiagram values={llValues} />),
+  (<LLDiagram />),
 ]
 
 const accordionData = Array.from({ length: 4 }, (_, i) => ({
@@ -63,6 +64,7 @@ function App() {
           <option value="dark">Dark</option>
           <option value="system">System</option>
         </select>
+
       </div>
 
       <form
