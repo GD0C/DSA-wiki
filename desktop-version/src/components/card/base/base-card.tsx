@@ -15,10 +15,10 @@ const COLS: Record<GridSize, string> = {
 } as const;;
 
 const STYLE: Record<CardType, (size: GridSize) => string> = {
-  standard: () => `${SURFACE} w-full rounded-md gap-8`,
-  accordion: () => `${SURFACE} flex flex-col gap-8`,
-  accordion_row: (size) => `${SURFACE} grid gap-8 ${COLS[size]}`,
-  accordion_array: () => `${SURFACE} flex flex-col gap-4`,
+  standard: () => `${SURFACE} w-full rounded-md gap-8 overflow-x-hidden`,
+  accordion: () => `${SURFACE} flex flex-col gap-8 overflow-x-hidden`,
+  accordion_row: (size) => `${SURFACE} grid gap-8 ${COLS[size]} overflow-x-hidden`,
+  accordion_array: () => `${SURFACE} flex flex-col gap-4 overflow-x-hidden`,
   image: () => `${SURFACE} flex flex-col gap-8`,
 };
 

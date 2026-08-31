@@ -9,7 +9,7 @@ const titles: string[] = [
   "Intro",
   "Array Diagram Example (Basic)",
   "Array Diagram Example (Advanced)",
-  "setup",
+  "Linked List Example (Basic)",
 ]
 
 const values: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -25,7 +25,7 @@ const details: React.ReactNode[] = [
   (<button className="hover:cursor-pointer">hello</button>),
   (<ArrayDiagram values={values} />),
   (<ArrayDiagram values={values} type="advanced" renderDetail={renderDetail} />),
-  (<LLDiagram />),
+  (<LLDiagram values={llValues} className="bg-brand" />),
 ]
 
 const accordionData = Array.from({ length: 4 }, (_, i) => ({

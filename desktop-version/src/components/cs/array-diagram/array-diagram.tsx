@@ -1,5 +1,9 @@
 import { ReactNode, useState, KeyboardEvent } from "react";
 
+/**
+  * author: { @Override } : 20260806 @ 13:00
+**/
+
 const CELL_PX = 40;
 const GAP_PX = 4;
 
@@ -23,9 +27,8 @@ type ArrayDiagramProps<T> =
 export const ArrayDiagram = <T = number>(props: ArrayDiagramProps<T>) => {
   const { values, size, showIndices = true, highlight } = props;
   const length = values?.length ?? size ?? 0;
-  const [selected, setSelected] = useState<number | null>(
-    props.type === "advanced" ? props.defaultSelected ?? null : null,
-  );
+
+  const [selected, setSelected] = useState<number | null>(props.type === "advanced" ? props.defaultSelected ?? null : null);
 
   const cell = (i: number) => {
     const filled = values !== undefined && i < values.length;

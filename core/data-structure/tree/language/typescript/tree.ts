@@ -1,6 +1,7 @@
 type Tree<T> =
   | { kind: 'empty' }
   | { kind: 'node', value: T, left: Tree<T>, right: Tree<T> }
+
 type EmptyTree = <T>() => Tree<T>;
 type Compare<T> = (a: T, b: T) => number
 

@@ -1,9 +1,18 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import type { FC, ReactNode } from 'react';
+import {
+  FC,
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 
-export type Theme = 'light' | 'dark' | 'system';
-export type ResolvedTheme = 'light' | 'dark';
+type LightOrDark = 'light' | 'dark';
+export type Theme = LightOrDark | 'system';
+export type ResolvedTheme = LightOrDark;
 
 const STORAGE_KEY = 'theme';
 const DARK_QUERY = '(prefers-color-scheme: dark)';
