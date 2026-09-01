@@ -18,7 +18,7 @@ type ArrayDiagramProps<T> =
   | (ArrayDiagramBase<T> & { type?: "basic" })
   | (ArrayDiagramBase<T> & {
     type: "advanced";
-    renderDetail: (value: T | undefined, index: number) => ReactNode;
+    renderDetail: (value: T | undefined, index: number) => ReactNode; // <div>hello</div>
     defaultSelected?: number;
   });
 

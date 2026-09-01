@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { ArrayDiagram, AccordionCard, BaseCard, LLDiagram } from "./components";
+import { ArrayDiagram, AccordionCard, BaseCard, LLDiagram, StackDiagram } from "./components";
 import { useTheme, type Theme } from "./theme";
 import "./App.css";
 
@@ -10,15 +10,20 @@ const titles: string[] = [
   "Array Diagram Example (Basic)",
   "Array Diagram Example (Advanced)",
   "Linked List Example (Basic)",
+  "Stack Diagram Example",
 ]
 
 const values: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const llValues: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const stackValues: number[] = [1, 2, 3, 4];
 console.log(llValues);
 
 
 const renderDetail = (value: number | undefined, idx: number) => (
-  <div className="text-red-500">arr[{idx}] = {String(value)}</div>
+  <div className="p-5 flex flex-col gap-2 justify-center items-center">
+    hello world
+    <div className="text-blue-500">arr[{idx}] = {String(value)}</div>
+  </div>
 );
 
 const details: React.ReactNode[] = [
@@ -26,9 +31,10 @@ const details: React.ReactNode[] = [
   (<ArrayDiagram values={values} />),
   (<ArrayDiagram values={values} type="advanced" renderDetail={renderDetail} />),
   (<LLDiagram values={llValues} className="bg-brand" />),
+  (<StackDiagram values={stackValues} />),
 ]
 
-const accordionData = Array.from({ length: 4 }, (_, i) => ({
+const accordionData = Array.from({ length: 5 }, (_, i) => ({
   title: titles[i],
   children: <div className="p-5">{details[i]}</div>,
 }));
