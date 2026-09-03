@@ -76,6 +76,7 @@ export const ArrayDiagram = <T = number>(props: ArrayDiagramProps<T>) => {
   const indices = Array.from({ length }, (_, i) => i);
 
   return (
+
     <div className="flex flex-col" onKeyDown={onKeyDown}>
       <div className="flex gap-1" role="list">
         {indices.map(cell)}

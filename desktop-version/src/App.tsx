@@ -10,13 +10,12 @@ const titles: string[] = [
   "Array Diagram Example (Basic)",
   "Array Diagram Example (Advanced)",
   "Linked List Example (Basic)",
-  "Stack Diagram Example",
+  "Stack Diagram Example (Basic)",
+  "Stack Diagram Example (Advanced)",
 ]
 
 const values: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const llValues: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const stackValues: number[] = [1, 2, 3, 4];
-console.log(llValues);
 
 
 const renderDetail = (value: number | undefined, idx: number) => (
@@ -30,11 +29,12 @@ const details: React.ReactNode[] = [
   (<button className="hover:cursor-pointer">hello</button>),
   (<ArrayDiagram values={values} />),
   (<ArrayDiagram values={values} type="advanced" renderDetail={renderDetail} />),
-  (<LLDiagram values={llValues} className="bg-brand" />),
-  (<StackDiagram values={stackValues} />),
+  (<LLDiagram values={values} className="bg-brand" />),
+  (<StackDiagram values={stackValues} size={6} />),
+  (<StackDiagram values={stackValues} size={6} showIndices type="advanced" renderDetail={renderDetail} />),
 ]
 
-const accordionData = Array.from({ length: 5 }, (_, i) => ({
+const accordionData = Array.from({ length: 6 }, (_, i) => ({
   title: titles[i],
   children: <div className="p-5">{details[i]}</div>,
 }));
